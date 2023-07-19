@@ -1,0 +1,268 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- All Meta -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link Fontawesome Library -->
+    <link rel="stylesheet" href="{% static '/css/all.min.css' %}" />
+    <!-- Link Reset CSS File -->
+    <link rel="stylesheet" href="{% static '/css/reset.css' %}" />
+    <!-- Link Style CSS -->
+    <link rel="stylesheet" href="{% static '/css/style.css' %}" />
+    <!-- Title Project -->
+    <title>Products</title>
+  </head>
+
+  <body>
+    <!-- start navbar -->
+    <div class="navbar">
+      <div class="container">
+        <a href="">تواصل معنا</a>
+        <div class="basket">
+          <a href="">السلة</a>
+          <img src="images/Vector.png" alt="" />
+        </div>
+        <div class="search">
+          <i class="fa-regular fa-magnifying-glass"></i>
+          <input type="text" placeholder="البحث عن منتج" />
+        </div>
+        <div class="logo">
+          <a href="index1.html">صيدلية</a>
+          <img src="images/image 1.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <!-- end navbar -->
+    <!-- start info section -->
+    <div class="info-section">
+      <div class="container">
+        <div class="section1">
+          <div class="text">
+            <h2>وفر وقتك!<br />ادويتك توصل<br />لباب بيتك</h2>
+          </div>
+        </div>
+        <div class="section2">
+          <div class="text">
+            <h2>استشاري<br />مخصوص حتى<br />ينطيك العلاج<br />الافضل</h2>
+            <a href="" class="left">اتصل</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="categories">
+      <div class="container">
+        <a href="">الوصفات الخاصة</a>
+        <a href="">اجهزة طبية</a>
+        <a href="">مستلزمات طبية</a>
+        <a href="">مستلزمات اطفال</a>
+        <a href="" class="noAfter">منتجات العناية</a>
+      </div>
+    </div>
+    <!-- end info section -->
+    <!-- Start Product Section -->
+    <div class="product-section">
+      <!-- Container Product -->
+      <div class="container">
+        {% for category in categories %}
+        <!-- Header Section -->
+        <div class="products-header">
+          <!-- Title Section -->
+          <div class="product--title">
+            <h1>{{category.title}}</h1>
+          </div>
+          <!-- Icon Left  Chevron -->
+          <div class="product--icon-chevron">
+            <i class="fa-solid fa-chevron-left"></i>
+          </div>
+        </div>
+        <!-- Products Section -->
+        <div class="products">
+          {% for product in products  %}
+            {% if product.category == category %}
+              <!-- One Item (Product) -->
+              <div class="product">
+                <!-- Img Product -->
+                <div class="img-product">
+                  <!-- Button Add To Favorite -->
+
+                  <i class="fa-regular fa-heart"></i>
+
+                  <img src="{{product.image.url}}" alt="" >
+                </div>
+                <!-- Info Product -->
+                <div class="product-info">
+                  <div class="product--head">
+                    <h2 class="product--title">مجموعة الفيتامينات</h2>
+                    <div class="product-price">
+                      <p class="product--price">
+                        20 <span class="price-currency">IQD</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="product-sml-info">
+                    <p class="sml--info">مجموعة خاصة من الاعشاب الطبيعية</p>
+                  </div>
+                  <div class="btn-add-to-cart">
+                    <button class="btn add-to-cart popup-btn">
+                      <p>اضف الى السلة</p>
+                    </button>
+                  </div>
+                </div>
+                <div class="popup-view close-btn">
+                  <div class="popup-card">
+                    <a><i class="fas fa-times close-btn"></i></a>
+                    <div class="details">
+                      <p>اسم الشركة</p>
+                      <h2>اسم المنتج</h2>
+                      <div class="price">
+                        <p>35,000 <span>IQD</span></p>
+                      </div>
+                      <div class="addMore">
+                        <div class="numberAdjustment">
+                          <i class="fa-solid fa-minus"></i>
+                          <p class="value">1</p>
+                          <i class="fa-solid fa-plus"></i>
+                        </div>
+                        <a href="">اضف الى السلة</a>
+                      </div>
+                      <div class="toUse">
+                        <h3>الاستعمالات</h3>
+                        <p>
+                          يستخدم في علاج ارتفاع ضغط الدم، وعلاج أمراض الكلى لدى
+                          الأشخاص المصابين بداء السكري من النوع الثاني، والحد من
+                          مخاطر السكتة الدماغية لدى المرضى الذين يعانون من ضغط الدم
+                        </p>
+                      </div>
+                      <div class="toNotUse">
+                        <h3>الموانع</h3>
+                        <p>
+                          تجنب استعمال دواء لوسارتان في حالات فرط الحساسية لأي من
+                          مكونات الدواء
+                        </p>
+                      </div>
+                    </div>
+                    <img src="{{product.image.url}}" alt="" >
+                  </div>
+                </div>
+              </div>
+           {% endif %}
+           
+          {% endfor %}
+        </div>
+      
+        {% endfor %}
+      </div>
+  </div>
+  
+  
+    <!-- Start Footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="contact">
+          <div class="contact-head">
+            <h1 class="contact--title">تواصل معنا عبر</h1>
+          </div>
+          <div class="contact-body">
+            <div class="contact-right-side">
+              <ul>
+                <li>
+                  <i class="fa-regular fa-envelope"></i
+                  ><a href="#">GreenPharmacy@gmail.com</a>
+                </li>
+                <li>
+                  <i class="fa-brands fa-square-facebook"></i
+                  ><a href="#">صيدلية السهل الاخضر</a>
+                </li>
+                <li>
+                  <i class="fa-brands fa-telegram"></i
+                  ><a href="#">07826341652</a>
+                </li>
+              </ul>
+            </div>
+            <div class="contact-left-side">
+              <ul>
+                <li>
+                  <i class="fa-solid fa-location-dot"></i
+                  ><a href="#">النجف - شارع الاسكان</a>
+                </li>
+                <li>
+                  <i class="fa-solid fa-phone-volume"></i
+                  ><a href="#">استشارة صيدلاني مختص</a>
+                </li>
+              </ul>
+              <div class="contact-form">
+                <div class="input--phone">
+                  <input
+                    type="text"
+                    name="phone"
+                    id="phone"
+                    placeholder="ادخل رقم الهاتف"
+                  />
+                </div>
+                <div class="input-text-area">
+                  <textarea
+                    name="Sub"
+                    id="Sub"
+                    placeholder="اترك استفسارك هنا "
+                  ></textarea>
+                  <button>ارسل</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Footer -->
+    <div class="popup-view active">
+      <div class="popup-card">
+        <a><i class="fas fa-times close-btn"></i></a>
+        <div class="details">
+          <p>اسم الشركة</p>
+          <h2>اسم المنتج</h2>
+          <div class="price">
+            <p>35,000 <span>IQD</span></p>
+          </div>
+          <div class="addMore">
+            <!-- <div class="numberOf"> -->
+            <div class="numberAdjustment">
+              <i class="fa-solid fa-minus"></i>
+              <p class="value">1</p>
+              <i class="fa-solid fa-plus"></i>
+            </div>
+
+            <a href="">اضف الى السلة</a>
+            <!-- </div> -->
+          </div>
+          <div class="toUse">
+            <h3>الاستعمالات</h3>
+            <p>
+              يستخدم في علاج ارتفاع ضغط الدم، وعلاج أمراض الكلى لدى الأشخاص
+              المصابين بداء السكري من النوع الثاني، والحد من مخاطر السكتة
+              الدماغية لدى المرضى الذين يعانون من ضغط الدم
+            </p>
+          </div>
+          <div class="toNotUse">
+            <h3>الموانع</h3>
+            <p>
+              تجنب استعمال دواء لوسارتان في حالات فرط الحساسية لأي من مكونات
+              الدواء
+            </p>
+          </div>
+        </div>
+        <img src="images/imgProduct.png" alt="" />
+      </div>
+    </div>
+    <script src="{% static '/js/main.js' %}"></script>
+  </body>
+</html>

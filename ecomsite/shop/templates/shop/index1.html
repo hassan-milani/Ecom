@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link Fontawesome Library -->
+    <link rel="stylesheet" href="{% static '/css/all.min.css' %}" />
+    <!-- Link Reset CSS File -->
+    <link rel="stylesheet" href="{% static '/css/reset.css' %}" />
+    <!-- Link Style CSS -->
+    <link rel="stylesheet" href="{% static '/css/style.css' %}" />
+    <title>Home</title>
+  </head>
+  <body class="body">
+    <header>
+      <div class="container">
+        <div class="header-right">
+          <img src="images/image 1.png" alt="" class="logo" />
+          <a class="active" href="#home">الرئيسية</a>
+          <a href="">استشارة</a>
+          <a href="">تواصل معنا</a>
+          <img src="images/Vector.png" alt="" class="basket" />
+          <a href="">السلة</a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <h1>صيدلية السهل الاخضر</h1>
+        <p>جميع الادوية المستلزمات الصحية في مكان واحد</p>
+        <ul>
+          <li>البحث عن جميع انواع المستلزمات الصحية</li>
+          <li>توصيل الوصفة الطبية الى باب بيتك</li>
+          <li>استشاري خاص يجاوب على اسئلتك</li>
+        </ul>
+        <div class="button">
+          <div class="arrow"><img src="images/Stroke-1.png" alt="" /></div>
+          <a href="index.html" class="buttom">تصفح المتجر</a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
